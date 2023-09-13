@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical"
+    tools:context=".Activities.WebViewActivity">
+
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/appbarLayout"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/internet_text"
+        android:text="You are not connected to internet. Please check your internet connection"
+        android:textColor="@color/white"
+        android:background="@color/warn_red"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:layout_below="@id/appbarLayout"
+        android:elevation="1dp"/>
+    <WebView
+        android:layout_below="@id/internet_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/aweb_view"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prgrss_bar"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

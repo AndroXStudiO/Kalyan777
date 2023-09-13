@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".Activities.GDBiddingActivity">
+
+    <include layout="@layout/toolbar"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/internet_text"
+        android:text="You are not connected to internet. Please check your internet connection"
+        android:textColor="@color/white"
+        android:background="@color/warn_red"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:elevation="1dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ll_bid"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/date_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/white"
+                android:textColorHint="@color/purple_700"
+                android:layout_marginHorizontal="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeWidth="2dp"
+                android:layout_marginTop="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/chus_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Date"
+                    android:textColor="@color/white"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:maxLength="10"
+                    android:drawableEnd="@drawable/ic_calender"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/digit_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/purple_700"
+                app:boxStrokeColor="@color/white"
+                android:layout_marginHorizontal="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeWidth="2dp"
+                android:layout_marginTop="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/complete_txt_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Digit"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="15dp"
+                    android:textColorHint="@color/button_bg"
+                    android:textColor="@color/white"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/point_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/purple_700"
+                app:boxStrokeColor="@color/white"
+                android:layout_marginHorizontal="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeWidth="2dp"
+                android:layout_marginTop="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_points"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Points"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="15dp"
+                    android:inputType="number"
+                    android:textCursorDrawable="@color/black"
+                    android:maxLength="9"
+                    android:textColorHint="@color/button_bg"
+                    android:textColor="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_pro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Proceed"
+                app:backgroundTint="@color/button_bg"
+                android:background="@drawable/ic_bg_editbox"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/ll_bid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            app:spanCount="2"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/custom_bidding_layout"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@id/linear_l_bid_bottom"
+            android:id="@+id/a_recyclerView"/>
+        <LinearLayout
+            android:id="@+id/linear_l_bid_bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtv_total_points"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@color/text_bg"
+                android:paddingHorizontal="10dp"
+                android:text="Total Points : 0"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pro_conf"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                app:backgroundTint="@color/button_bg"
+                android:background="@drawable/ic_bg_editbox"
+                android:text="Submit"
+                android:gravity="center"
+                android:onClick="secondProceedBtn"/>
+        </LinearLayout>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/white"
+            android:id="@+id/prgrss_bar"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</LinearLayout>

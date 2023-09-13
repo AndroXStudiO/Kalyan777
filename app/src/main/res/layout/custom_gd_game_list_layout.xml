@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/purple_700"
+    app:strokeColor="@color/white"
+    app:strokeWidth="1dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp">
+    <RelativeLayout
+        android:layout_margin="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:padding="1dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/agameName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.2"
+            android:text="GALIDISHAWAR"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/agameResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/agameName"
+            android:layout_centerHorizontal="true"
+            android:letterSpacing="0.4"
+            android:text="12345677"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/agamePlay"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:tint="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/acloseTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/agameResult"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:drawableStart="@drawable/baseline_access_time_24"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="Close: 10:30 AM"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

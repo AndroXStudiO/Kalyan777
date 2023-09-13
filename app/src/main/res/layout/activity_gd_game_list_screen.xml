@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/black">
+    <include layout="@layout/toolbar"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:paddingHorizontal="20dp"
+        android:gravity="center_vertical"
+        android:layout_margin="20sp"
+        android:background="@drawable/ic_border_dark"
+        android:backgroundTint="@color/white">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/topText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gali Desawar Game"
+            android:textColor="@color/button_bg"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:textSize="18sp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/leftD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Left Digit"
+            android:textColor="@color/white"
+            android:layout_below="@id/topText"
+            android:textStyle="bold"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/a_left_d_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/topText"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/right_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right Digit"
+            android:textColor="@color/white"
+            android:layout_below="@id/leftD"
+            android:textStyle="bold"
+            android:layout_marginVertical="8dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/a_right_d_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/leftD"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:layout_marginVertical="8dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/jodiii_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jodi Digit"
+            android:textColor="@color/white"
+            android:layout_below="@id/right_d"
+            android:textStyle="bold"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/a_jodi_d_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/right_d"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/a_chart_table_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/jodiii_d"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/button_bg"
+            android:gravity="center"
+            android:paddingHorizontal="0dp"
+            android:text="Chart"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/a_b_his_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="@color/button_bg"
+            android:text="Bid History"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/a_w_his_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/button_bg"
+            android:text="Win History"
+            android:textColor="@color/white"
+            tools:ignore="RelativeOverlap" />
+    </RelativeLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mswipe_ref_lyt">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/a_recy_s_l"
+            tools:listitem="@layout/custom_gd_game_list_layout"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

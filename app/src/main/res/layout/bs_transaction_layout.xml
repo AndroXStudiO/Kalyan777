@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_bg_editbox"
+    android:paddingVertical="30dp">
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtv_bottom_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Once a bid is placed, it will not be cancelled."
+        android:textColor="@color/green"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="30dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/button_bg"
+            android:background="@drawable/ic_bg_editbox"
+            app:shapeAppearanceOverlay="@style/leaf"
+            android:layout_marginHorizontal="40dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Confirm"
+            android:layout_marginHorizontal="40dp"
+            android:background="@drawable/ic_bg_editbox"
+            app:backgroundTint="@color/green"
+            android:layout_weight="1"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

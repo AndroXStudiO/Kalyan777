@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/internet_text"
+        android:text="You are not connected to internet. Please check your internet connection"
+        android:textColor="@color/white"
+        android:background="@color/warn_red"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:elevation="1dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="20dp"
+        android:gravity="center_vertical"
+        android:layout_margin="20sp"
+        android:background="@drawable/ic_border_dark"
+        android:backgroundTint="@color/white">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/topText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Starline Game"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/sing_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/topText"
+            android:text="Single Digit"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/singgg_d_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/topText"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/sing_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Single Panna"
+            android:textColor="@color/white"
+            android:layout_below="@id/sing_d"
+            android:textStyle="bold"
+            android:layout_marginVertical="8dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/singgg_p_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/sing_d"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:layout_marginVertical="8dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/doub_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Double Panna"
+            android:textColor="@color/white"
+            android:layout_below="@id/sing_p"
+            android:textStyle="bold"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/double_p_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/sing_p"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/TriplePana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Triple Panna"
+            android:textColor="@color/white"
+            android:layout_below="@id/doub_p"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/triple_p_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/doub_p"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/a_chart_table_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/triple_p_v"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:backgroundTint="@color/button_bg"
+            android:gravity="center"
+            android:text="Chart"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/a_b_his_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            app:backgroundTint="@color/button_bg"
+            android:text="Bid History"
+            android:textColor="@color/white"
+            android:background="@drawable/ic_bg_editbox"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/a_w_his_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            app:backgroundTint="@color/button_bg"
+            android:text="Win History"
+            android:textColor="@color/white"
+            android:background="@drawable/ic_bg_editbox"
+            tools:ignore="RelativeOverlap" />
+    </RelativeLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mswipe_ref_lyt">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/a_recy_s_l"
+            tools:listitem="@layout/custom_sl_game_list_layout"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

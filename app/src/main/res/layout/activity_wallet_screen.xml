@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Activities.WalletActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/appbarLayout" />
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/internet_text"
+        android:text="You are not connected to internet. Please check your internet connection"
+        android:textColor="@color/white"
+        android:background="@color/warn_red"
+        android:padding="5dp"
+        android:elevation="1dp"
+        android:visibility="gone"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:background="@color/text_bg">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/walletIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_account_balance_wallet_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Balance"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toTopOf="@id/walletIcon"
+            app:layout_constraintBottom_toTopOf="@id/menuChips"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/walletIcon"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/menuChips"
+            app:layout_constraintBottom_toBottomOf="@id/walletIcon"
+            app:layout_constraintStart_toEndOf="@id/walletIcon"
+            app:layout_constraintTop_toBottomOf="@id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/awithd_ot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:text="Withdraw Open time ="
+            app:layout_constraintTop_toBottomOf="@id/walletIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/qawithd_ct"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/awithd_ot"
+            android:layout_below="@id/awithd_ot"
+            android:text="Withdraw Close time ="
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/azminWithdCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/qawithd_ct"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qawithd_ct"
+            android:text="Minimum withdrawal point are -"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/aaddCoins"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:textColor="@color/text_bg"
+            android:text="Add Money"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/atransBtn"
+            app:layout_constraintTop_toBottomOf="@id/azminWithdCoins"
+            android:background="@color/white"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="10dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/atransBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@color/text_bg"
+            android:text="Transfer"
+            android:layout_marginStart="25sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/aaddCoins"
+            app:layout_constraintTop_toTopOf="@id/aaddCoins"
+            app:layout_constraintBottom_toBottomOf="@id/aaddCoins"
+            app:layout_constraintTop_toBottomOf="@id/azminWithdCoins"
+            android:background="@color/white"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/awithDBtn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/text_bg"
+            android:text="Withdraw"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/white"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/googlePay"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintStart_toEndOf="@id/awithDBtn"
+            app:layout_constraintTop_toTopOf="@id/awithDBtn"
+            app:layout_constraintEnd_toStartOf="@id/paytm"
+            app:layout_constraintBottom_toBottomOf="@id/awithDBtn"
+            app:cardBackgroundColor="@color/button_bg"
+            android:onClick="googlepayUpi">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Google\nPay"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="11sp"/>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/paytm"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintStart_toEndOf="@id/googlePay"
+            app:layout_constraintTop_toTopOf="@id/awithDBtn"
+            app:layout_constraintBottom_toBottomOf="@id/awithDBtn"
+            app:cardBackgroundColor="@color/button_bg"
+            app:layout_constraintEnd_toStartOf="@+id/phonePe"
+            android:onClick="paytm">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paytm"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="11sp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/phonePe"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintEnd_toStartOf="@id/bank"
+            app:layout_constraintStart_toEndOf="@id/paytm"
+            app:layout_constraintTop_toTopOf="@id/awithDBtn"
+            app:layout_constraintBottom_toBottomOf="@id/awithDBtn"
+            app:cardBackgroundColor="@color/button_bg"
+            android:onClick="phonePe">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PhonePe"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="11sp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bank"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintStart_toEndOf="@id/phonePe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/awithDBtn"
+            app:layout_constraintBottom_toBottomOf="@id/awithDBtn"
+            app:cardBackgroundColor="@color/button_bg"
+            android:onClick="bank">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bank"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="11sp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transition History:"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/awithDBtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/awithDBtn"
+            android:layout_marginTop="10dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/mswipe_ref_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewWallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                tools:listitem="@layout/custom_wallet_layout" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/aempty_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/img_no_data"
+                android:layout_marginVertical="100dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

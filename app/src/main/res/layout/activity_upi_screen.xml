@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_color"
+    tools:context=".Activities.UPIActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar"
+            android:id="@+id/appbarLayout"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/internet_text"
+            android:text="You are not connected to internet. Please check your internet connection"
+            android:textColor="@color/white"
+            android:background="@color/warn_red"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:elevation="1dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30dp">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textColor="@color/white"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/in_txt_upi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="14sp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp"
+                android:inputType="number"
+                android:maxLength="10"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ic_border_dark"
+                android:textCursorDrawable="@color/white"
+                android:layout_marginVertical="15dp"
+                android:hint="Enter Mobile Number"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                app:shapeAppearanceOverlay="@style/leaf"
+                android:layout_gravity="end"
+                app:backgroundTint="@color/button_bg"
+                android:background="@drawable/ic_bg_editbox"
+                android:padding="10dp"
+                android:textAllCaps="false"
+                android:onClick="sUp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prgrss_bar"
+        android:indeterminateTint="@color/white"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_splash_gradient"
+    tools:context=".Activities.OtpActivity">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/internet_text"
+        android:text="You are not connected to internet. Please check your internet connection"
+        android:textColor="@color/white"
+        android:background="@color/warn_red"
+        android:padding="5dp"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        android:elevation="1dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/name_text" />
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Please type verification code sent to\n1234567890"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            />
+
+        <com.chaos.view.PinView
+            android:id="@+id/otp"
+            app:itemCount="4"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:itemBackground="@color/white"
+            android:layout_gravity="center"
+            android:inputType="number"
+            android:cursorVisible="true"
+            app:hideLineWhenFilled="false"
+            app:itemRadius="10dp"
+            style="@style/PinWidget.PinView"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:onClick="submit"
+            android:text="Submit"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/ic_bg_editbox"
+            app:backgroundTint="@color/button_bg" />
+
+        <TextView
+            android:id="@+id/textViewResend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Resend OTP"
+            android:onClick="resendOtp"
+            android:textColor="#2196F3"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/whatsappText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/whatsapp"
+            android:text="WhatsApp"
+            android:gravity="center"
+            android:drawablePadding="10dp"
+            android:textSize="16sp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="50dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:onClick="whatsAppBtn"/>
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prgrss_bar"
+        android:visibility="gone"
+        android:indeterminateTint="@color/editTextColor"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

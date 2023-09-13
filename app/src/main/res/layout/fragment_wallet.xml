@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bg_color"
+    tools:context=".Fragments.WalletFragment">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/topCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="@color/purple_700"
+        app:cardCornerRadius="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/addPoints"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Points"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@drawable/add_point"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/withdraw"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Withdraw"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@drawable/bank_building_icon"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/transfer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Transfer"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@drawable/transfer"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/method"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Withdraw Method"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@drawable/method"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/hostFragment2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_color"
+    tools:context=".Activities.BankDetailsActivity">
+
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/appbarLayout"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/internet_text"
+        android:text="You are not connected to internet. Please check your internet connection"
+        android:textColor="@color/white"
+        android:background="@color/warn_red"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:visibility="gone"
+        android:layout_below="@id/appbarLayout"
+        android:elevation="1dp"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/internet_text">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="30dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account Holder Name"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+
+            android:backgroundTint="@color/white"
+            android:background="@drawable/ic_border_dark"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/naam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Enter your name"
+                android:textCursorDrawable="@color/white"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account Number"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+
+            android:backgroundTint="@color/white"
+            android:background="@drawable/ic_border_dark"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/acc_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@color/white"
+                android:hint="Enter Your Account Number"
+                android:inputType="number"
+                android:lines="1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm Account Number"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+
+            android:backgroundTint="@color/white"
+            android:background="@drawable/ic_border_dark"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/confirm_acc_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@color/white"
+                android:hint="Confirm Account Number"
+                android:inputType="number"
+                android:lines="1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IFSC Code"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+
+            android:backgroundTint="@color/white"
+            android:background="@drawable/ic_border_dark"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/ifsc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Enter IFSC code"
+                android:textCursorDrawable="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="11" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bank Name"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+
+            android:backgroundTint="@color/white"
+            android:background="@drawable/ic_border_dark"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/branch_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Enter Bank Name"
+                android:textCursorDrawable="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="text"
+                android:lines="1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Branch Address"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ic_border_dark"
+                android:paddingHorizontal="25dp"
+                android:id="@+id/branch_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="top"
+                android:textCursorDrawable="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Enter Branch Address"
+                android:inputType="text|textMultiLine"
+                android:lines="4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                app:backgroundTint="@color/button_bg"
+                android:onClick="submitInfo"
+                android:text="Submit" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prgrss_bar"
+        android:indeterminateTint="@color/white"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+</RelativeLayout>

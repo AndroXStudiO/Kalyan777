@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_menu_home"/>
+    <item android:title="Wallet"
+        android:icon="@drawable/ic_menu_wallet"
+        android:id="@+id/aWalletStatement"
+        android:visible="false"/>
+    <item android:title="Win History"
+        android:id="@+id/winHstry"
+        android:icon="@drawable/ic_menu_win_history"
+        android:visible="false"/>
+    <item android:title="Bid History"
+        android:id="@+id/BidHstry"
+        android:visible="false"
+        android:icon="@drawable/ic_menu_bid_history"/>
+    <item android:title="Game Rates"
+        android:id="@+id/b_games_value"
+        android:icon="@drawable/ic_menu_game_rate"
+        android:visible="false"/>
+    <item android:title="How to Play"
+        android:id="@+id/way_to_learn"
+        android:icon="@drawable/baseline_play_circle_outline_24"
+        android:visible="false"/>
+    <item android:title="Contact Us"
+        android:id="@+id/aContactUs"
+        android:visible="false"
+        android:icon="@drawable/ic_menu_contact_us"/>
+    <item android:title="Share With Friends"
+        android:id="@+id/a_shreWithFriends"
+        android:icon="@drawable/ic_menu_share"/>
+    <item android:title="Rate App"
+        android:id="@+id/RteApp"
+        android:icon="@drawable/ic_menu_rating"/>
+    <item android:title="Change Password"
+        android:id="@+id/ChngePasswrd"
+        android:icon="@drawable/ic_menu_change_password"/>
+    <item android:title="Logout"
+        android:id="@+id/usrSignup"
+        android:icon="@drawable/ic_menu_logout"/>
+</menu>
