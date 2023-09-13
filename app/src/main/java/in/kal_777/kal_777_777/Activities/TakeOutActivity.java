@@ -81,12 +81,15 @@ public class TakeOutActivity extends AppCompatActivity {
         toolbarPoints.setText(SharedPreferenceData.getCustttttomerCoins(TakeOutActivity.this));
 
     }
+    
+    //Replace the function 
+
     private void withdSMethod(TakeOutActivity activity) {
         swipeRefreshLayout.setRefreshing(true);
-        Call<WalletStatementModal> call = ApiClient.getClient().withdraw_statement(SharedPreferenceData.getLogiiiinInToken(this),"");
-        call.enqueue(new Callback<WalletStatementModal>() {
+        Call call = ApiClient.getClient().withdraw_statement(SharedPreferenceData.getLogiiiinInToken(this),"");
+        call.enqueue(new Callback() {
             @Override
-            public void onResponse(Call<WalletStatementModal> call, Response<WalletStatementModal> response) {
+            public void onResponse(Call call, Response response) {
                 if (response.isSuccessful()) {
                     WalletStatementModal statementModal = response.body();
                     if (statementModal.getCode().equalsIgnoreCase("505")) {
@@ -97,19 +100,18 @@ public class TakeOutActivity extends AppCompatActivity {
                         finish();
                     }
                     if (statementModal.getStatus().equalsIgnoreCase("success")) {
-
-                        statementArrayList = statementModal.getData().getStatement();
-                        LinearLayoutManager layoutManager = new LinearLayoutManager(activity);
-                        recyclerView.setLayoutManager(layoutManager);
-                        walletAdapter = new WalletAdapter(activity, statementArrayList);
-                        recyclerView.setAdapter(walletAdapter);
-
+                        if (statementModal.getData().getStatement() !=null) {
+                            emptyIV.setVisibility(View.GONE);
+                            statementArrayList = statementModal.getData().getStatement();
+                            LinearLayoutManager layoutManager = new LinearLayoutManager(activity);
+                            recyclerView.setLayoutManager(layoutManager);
+                            walletAdapter = new WalletAdapter(activity, statementArrayList);
+                            recyclerView.setAdapter(walletAdapter);
+                        } else {
+                            emptyIV.setVisibility(View.VISIBLE);
+                        }
                     }
-                    if (!statementArrayList.isEmpty()) {
-                        emptyIV.setVisibility(View.GONE);
-                    } else {
-                        emptyIV.setVisibility(View.VISIBLE);
-                    }
+
                     Toast.makeText(activity, statementModal.getMessage(), Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(activity, "Try Again", Toast.LENGTH_SHORT).show();
@@ -120,7 +122,7 @@ public class TakeOutActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<WalletStatementModal> call, Throwable t) {
+            public void onFailure(Call call, Throwable t) {
                 swipeRefreshLayout.setRefreshing(false);
                 System.out.println("walletStatement error "+t);
                 Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show();
