@@ -81,15 +81,12 @@ public class TakeOutActivity extends AppCompatActivity {
         toolbarPoints.setText(SharedPreferenceData.getCustttttomerCoins(TakeOutActivity.this));
 
     }
-    
-    //Replace the function 
-
     private void withdSMethod(TakeOutActivity activity) {
         swipeRefreshLayout.setRefreshing(true);
-        Call call = ApiClient.getClient().withdraw_statement(SharedPreferenceData.getLogiiiinInToken(this),"");
-        call.enqueue(new Callback() {
+        Call<WalletStatementModal> call = ApiClient.getClient().withdraw_statement(SharedPreferenceData.getLogiiiinInToken(this),"");
+        call.enqueue(new Callback<WalletStatementModal>() {
             @Override
-            public void onResponse(Call call, Response response) {
+            public void onResponse(Call<WalletStatementModal> call, Response<WalletStatementModal> response) {
                 if (response.isSuccessful()) {
                     WalletStatementModal statementModal = response.body();
                     if (statementModal.getCode().equalsIgnoreCase("505")) {
@@ -111,7 +108,6 @@ public class TakeOutActivity extends AppCompatActivity {
                             emptyIV.setVisibility(View.VISIBLE);
                         }
                     }
-
                     Toast.makeText(activity, statementModal.getMessage(), Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(activity, "Try Again", Toast.LENGTH_SHORT).show();
@@ -122,7 +118,7 @@ public class TakeOutActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call call, Throwable t) {
+            public void onFailure(Call<WalletStatementModal> call, Throwable t) {
                 swipeRefreshLayout.setRefreshing(false);
                 System.out.println("walletStatement error "+t);
                 Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show();
